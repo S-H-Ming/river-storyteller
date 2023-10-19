@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { useState } from "react"
 
-export default function nickNameModule() {
-
+export default function useNickNameModule() {
   const [nickName, setNickName] = useState('');
+  
 
   return (
     <>
@@ -24,7 +24,7 @@ export default function nickNameModule() {
       </label>
       
         <Link href={{pathname: '/chat', query: {name: nickName}}}>
-          <button disabled={!nickName} className="btn-primary">Let's Go</button>
+          <button disabled={!nickName} className="btn-primary">Let&apos;s Go</button>
         </Link>
       
     </>

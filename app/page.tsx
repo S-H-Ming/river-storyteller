@@ -1,4 +1,4 @@
-import NickNameModule from "./nickNameModule";
+import NickNameModule from "@/components/nickNameModule";
 
 export default function Home() {
   return (

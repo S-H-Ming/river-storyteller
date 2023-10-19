@@ -31,7 +31,7 @@ export default function Nickname() {
     return (
         
         <form onSubmit={handleSubmit} className="w-1/2">
-            <label>What's your nickname?
+            <label>What&apos;s your nickname?
             <input
                 required
                 type="text"
