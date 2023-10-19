@@ -92,7 +92,15 @@ body {
   form button {
     @apply block mx-auto;
   }
-  
+
+   /* form styles  */
+  input {
+    @apply p-2 rounded-sm bg-slate-400 text-slate-900 font-normal focus:outline-none 
+  }
+  label {
+    @apply font-semibold
+  }
+
   /* feedback styles */
   .error {
     @apply 
@@ -149,7 +157,4 @@ body {
   }
 
 
-  /* inputs  */
-  input {
-    @apply p-2 rounded-sm bg-slate-400 text-black
-  }
+ 
