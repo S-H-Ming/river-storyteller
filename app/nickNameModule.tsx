@@ -9,17 +9,24 @@ export default function nickNameModule() {
 
   return (
     <>
-    <h2>This is a simple data passing nickNameModule</h2>
-    <label> Nickname:
+      <p>Welcome to River StoryTeller!</p>
+      <p>To get started, please enter your nickname.</p>
+      
+      <label> Your Nickname {" "}
+      <p>
         <input
             required
             type="text"
             onChange={(e)=>setNickName(e.target.value)}
             value={nickName}
         />
-            
-    </label>
-    <Link href={{pathname: '/chat', query: {name: nickName}}}>Go to Chat</Link>
+      </p>
+      </label>
+      
+        <Link href={{pathname: '/chat', query: {name: nickName}}}>
+          <button disabled={!nickName} className="btn-primary">Let's Go</button>
+        </Link>
+      
     </>
   )
 }

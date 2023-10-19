@@ -3,7 +3,7 @@ import NickNameModule from "./nickNameModule";
 export default function Home() {
   return (
     <main>
-      <h2>Welcome</h2>
+      <h1>Tsen-wen River StoryTeller</h1>
       <NickNameModule/>
     </main>
   )
