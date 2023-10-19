@@ -5,7 +5,7 @@
 /* base styles */
 body {
     background: #ebf0fa;
-    @apply text-gray-700 m-8;
+    @apply text-gray-700;
   }
   h1 {
     @apply font-bold text-primary text-2xl mb-8;
@@ -14,9 +14,13 @@ body {
   h2 {
     @apply font-bold text-primary text-lg;
   }
+  
+  h3 {
+    @apply font-semibold text-primary text-lg;
+  }
 
   main {
-    @apply max-w-5xl my-12 mx-auto px-8 border-violet-400;; 
+    @apply max-w-5xl my-12 mx-auto px-8; 
   }
   main > h2 {
     @apply mb-4 pb-2 text-base
@@ -50,6 +54,7 @@ body {
   }
   
   /* button styles */
+
   button {
     @apply 
       px-3 py-2 
@@ -68,7 +73,7 @@ body {
   }
   
   /* form styles */
-  form {
+  /* form {
     @apply 
       py-4 px-7 
       bg-primary 
@@ -91,7 +96,7 @@ body {
   }
   form button {
     @apply block mx-auto;
-  }
+  } */
 
    /* form styles  */
   input {
@@ -101,6 +106,9 @@ body {
     @apply font-semibold
   }
 
+  textarea{
+    @apply  bg-slate-300 p-2 text-black w-full mt-2 mb-4
+  }
   /* feedback styles */
   .error {
     @apply 
