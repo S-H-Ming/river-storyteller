@@ -1,9 +1,13 @@
 "use client";
 import { useChat, Message } from "ai/react";
 
-export default function ChatComponent() {
-  const { input, handleInputChange, handleSubmit, messages } = useChat();
+type Props = {
+  nickname: String;
+}
 
+export default function ChatComponent({nickname}: Props) {
+  const { input, handleInputChange, handleSubmit, messages } = useChat();
+  console.log("name: "+nickname);
   return (
     <div>
       {messages.map((message: Message) => {
@@ -14,9 +18,9 @@ export default function ChatComponent() {
             message.content.includes("As a rock") ? (
               <h3 className="font-semibold mt-2">Rock</h3>
             ) : message.role === "assistant" ? (
-              <h3 className="font-semibold mt-2">Tsen-wen River</h3>
+              <h3 className="font-semibold mt-2">Tsen-wen River:</h3>
             ) : (
-              <h3 className="font-semibold mt-2">You</h3>
+              <h3 className="font-semibold mt-2">{nickname}:</h3>
             )}
 
             {/* Formatting the message */}
@@ -34,8 +38,8 @@ export default function ChatComponent() {
       })}
 
       <form onSubmit={handleSubmit}>
-        <h3>User Message</h3>
-        <textarea
+        <h3>{nickname}:</h3>
+        <textarea className="resize-y h-24"
           placeholder={
             "Ask a question, give an opinion or simply have a chat with the Tsen-wen River..."
           }
