@@ -1,5 +1,5 @@
 import NickNameModule from "@/components/nickNameModule";
-import Image from 'next/image'
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -10,7 +10,6 @@ export default function Home() {
           width={500}
           height={500}
           alt="Interface for Care Logo"
-          
         />
       </div>
       <h1>Tsen-wen River StoryTeller</h1>
