@@ -21,15 +21,14 @@ h3 {
 
 main {
   @apply max-w-5xl my-12 mx-auto px-8;
-
 }
 
-.center{
+.center {
   margin: auto;
   text-align: center;
 }
 
-.left{
+.left {
   margin: auto;
   text-align: left;
 }
@@ -189,7 +188,6 @@ textarea {
 
 /* Styles for screens between 768px and 1023px */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-
   .logo {
     /* width: 700px;
     padding-bottom: 60px; */
@@ -202,9 +200,9 @@ textarea {
     /* width: 1000px;
     padding-bottom: 60px; */
   }
-
 }
 
 .bg-image {
-  background: url("../public/background_interface_for_care.png") center center / cover;
+  background: url("../public/background_interface_for_care.png") center center /
+    cover fixed;
 }
