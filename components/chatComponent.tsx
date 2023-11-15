@@ -1,5 +1,6 @@
 "use client";
 import { useChat, Message } from "ai/react";
+import Image from 'next/image';
 
 type Props = {
   nickname: String;
@@ -16,9 +17,16 @@ export default function ChatComponent({nickname}: Props) {
             {/*  Name of person talking */}
             {message.role === "assistant" &&
             message.content.includes("As a rock") ? (
-              <h3 className="font-semibold mt-2">Rock</h3>
+              <div className="flex items-center">
+                  <Image src='/rock.png' alt='rock icon' width={90} height={90} />
+                <h3 className="font-semibold mt-2 pl-2">Rock:</h3>
+              </div>
             ) : message.role === "assistant" ? (
-              <h3 className="font-semibold mt-2">Tsen-wen River:</h3>
+              <div className="flex items-center">
+                  <Image src='/river.png' alt='rock icon' width={90} height={90} />
+                  <h3 className="font-semibold mt-2 pl-2">Tsen-wen River:</h3>
+                </div>
+
             ) : (
               <h3 className="font-semibold mt-2">{nickname}:</h3>
             )}
@@ -28,9 +36,9 @@ export default function ChatComponent({nickname}: Props) {
               .split("\n")
               .map((currentTextBlock: string, index: number) => {
                 if (currentTextBlock === "") {
-                  return <p key={message.id + index}>&nbsp;</p>; // " "
+                  return <p  key={message.id + index}>&nbsp;</p>;
                 } else {
-                  return <p key={message.id + index}>{currentTextBlock}</p>;
+                  return <p className='bg-white p-2 rounded-b-[20px] rounded-tr-[20px] border border-[#00A6A3]' key={message.id + index}>{currentTextBlock}</p>;
                 }
               })}
           </div>
@@ -46,7 +54,7 @@ export default function ChatComponent({nickname}: Props) {
           value={input}
           onChange={handleInputChange}
         ></textarea>
-        <button className="btn-primary">Send Message</button>
+        <button className="btn-primary rounded-[30px]">Send Message</button>
       </form>
     </div>
   );

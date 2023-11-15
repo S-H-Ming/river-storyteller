@@ -8,8 +8,8 @@ export default function useNickNameModule() {
 
   return (
     <>
-      <p>Welcome to River StoryTeller!</p>
-      <p>To get started, please enter your nickname.</p>
+      <p className="text-3xl max-w-2xl mx-auto">Welcome to the Tsen-wen River StoryTeller! You will be able to interact with the essence of the river and learn more about it.</p>
+      <p className="text-lg">To get started add your nickname first</p>
 
       <label>
         {" "}
@@ -25,7 +25,7 @@ export default function useNickNameModule() {
       </label>
 
       <Link href={{ pathname: "/chat", query: { name: nickName } }}>
-        <button disabled={!nickName} className="btn-primary">
+        <button disabled={!nickName} className="btn-primary rounded-full p-4">
           Let&apos;s Go
         </button>
       </Link>
