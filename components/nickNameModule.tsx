@@ -8,7 +8,10 @@ export default function useNickNameModule() {
 
   return (
     <>
-      <p className="text-3xl max-w-2xl mx-auto">Welcome to the Tsen-wen River StoryTeller! You will be able to interact with the essence of the river and learn more about it.</p>
+      <p className="text-3xl max-w-2xl mx-auto">
+        Welcome to the Tsen-wen River StoryTeller! You will be able to interact
+        with the essence of the river and learn more about it.
+      </p>
       <p className="text-lg">To get started add your nickname first</p>
 
       <label>
