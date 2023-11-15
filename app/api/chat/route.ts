@@ -24,7 +24,8 @@ export async function POST(request: Request) {
   // createChatCompletion (get response from GPT-4)
   if (
     messages[messages.length - 1].role === "user" &&
-    messages[messages.length - 1].content.includes("rock")
+    (messages[messages.length - 1].content.includes("rock") ||
+      messages[messages.length - 1].content.includes("Rock"))
   ) {
     // change this to decide when to trigger the rock
     response = await openai.createChatCompletion({
