@@ -204,3 +204,7 @@ textarea {
   }
 
 }
+
+.bg-image {
+  background: url("../public/background_interface_for_care.png") center center / cover;
+}
