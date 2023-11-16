@@ -1,7 +1,20 @@
 import NickNameModule from "@/components/nickNameModule";
 import Image from "next/image";
 
-export default function Home() {
+async function getTsenwenRiverStatus(){
+  const res = await fetch("https://rivercare.imlab.app/api/rivers/1");
+  return res.json();
+}
+
+const TsenwenRiver = {
+  status: false
+}
+
+export default async function Home() {
+  const data = await getTsenwenRiverStatus();
+  // checking status of TsenwenRiver
+  TsenwenRiver.status = true; // to be replaced with actual status
+
   return (
     <main className="center">
       <div className="logo">
@@ -13,7 +26,10 @@ export default function Home() {
         />
       </div>
       <h1>Tsen-wen River StoryTeller</h1>
-      <NickNameModule />
+      {TsenwenRiver.status?
+      <NickNameModule />:
+      <p>the river is offline</p>
+      }
     </main>
   );
 }
