@@ -24,11 +24,11 @@ export default function ChatComponent({ nickname }: Props) {
           <div key={message.id}>
             {/*  Name of person talking */}
             {message.role === "assistant" &&
-            (message.content.includes("As a rock") ||
+            (message.content.includes("As a rock") ||  message.content.includes("石頭") ||
               message.content.includes("as a rock")) ? (
               <div className="flex items-center">
                 <Image src="/rock.png" alt="rock icon" width={90} height={90} />
-                <h3 className="font-semibold mt-2 pl-2">Rock:</h3>
+                <h3 className="font-semibold mt-2 pl-2">石頭:</h3>
               </div>
             ) : message.role === "assistant" ? (
               <div className="flex items-center">

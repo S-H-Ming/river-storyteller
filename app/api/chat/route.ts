@@ -37,19 +37,18 @@ export async function POST(request: Request) {
   const { messages } = await request.json(); // { messages: [] }
   let response;
 
-  // messages [{ user and he says "hello there" }]
-  // console.log(messages[messages.length-1]);
-
-  // GPT-4 system message
-  // system message tells GPT-4 how to act
-  // it should always be at the front of your array
-
-  // createChatCompletion (get response from GPT-4)
+  console.log("messages");
+  
+  console.log({messages});
+  
   if (
     messages[messages.length - 1].role === "user" &&
     (messages[messages.length - 1].content.includes("rock") ||
-      messages[messages.length - 1].content.includes("Rock"))
+      messages[messages.length - 1].content.includes("石頭")) || messages[messages.length - 1].content.includes("石頭")
   ) {
+
+    console.log("判斷：yes")
+
     // change this to decide when to trigger the rock
     response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
@@ -71,17 +70,17 @@ export async function POST(request: Request) {
         {
           role: "system",
           content:
-            `You are a helpful AI speaking for Tsen-wen River in Tainan, Taiwan. Please only speak in Traditional Madarin or 繁體中文. 
-            Please be very careful and do not use any Simplfied Chinese while you answer anything. 
+            `You are a helpful AI storyteller, speaking for the Tsen-wen River in Tainan, Taiwan. Tell the stories in Traditional Mandarin or 繁體中文 only. 
             Tsen-wen River is ${RiverData.description} 
-            Tell your story to the user and share your world perspective to them. 
-            Be a storyteller, the stories could be: 
+            Tell your story to the user and share your world perspective to them. Encourage the users to think from the rivers perspective.
+            Be a knowledgeable storyteller, the stories could be, but not limited to: 
             story1: ${RiverData.story1}, 
             story2: ${RiverData.story2} and 
             story3: ${RiverData.story3}. 
-            Be engaing and kind. 
-            Be concise, and tell the story greadually. 
-            Keep each conversation within 3, 4 scentences only.`,
+            Be engaging and kind. Encourage users to ask questions about the stories.
+            Pace the speed of telling the story, throw some provocative questions to users sometimes, and gradually finish the story. 
+            Ask the uesrs to reflect their learning about the stories.
+            Try to keep each response short and within 3 to 4 sentences only. Do not do lengthy responce where users needs to read for a long time.`,
         },
         ...messages,
       ],
