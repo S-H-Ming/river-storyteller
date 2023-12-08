@@ -2,7 +2,7 @@ import NickNameModule from "@/components/nickNameModule";
 import Image from "next/image";
 
 async function getTsenwenRiverStatus(){
-  const res = await fetch("https://rivercare.imlab.app/api/rivers/1");
+  const res = await fetch("https://rivercare.plurality.moda.gov.tw/api/rivers/KT1XXF4fBXjBEjdjcV5qAJxJhCiyUaCzxnjc");
   return res.json();
 }
 
