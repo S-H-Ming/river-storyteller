@@ -3,6 +3,7 @@ import Image from "next/image";
 
 async function getTsenwenRiverStatus(){
   const res = await fetch("https://rivercare.plurality.moda.gov.tw/api/rivers/KT1XXF4fBXjBEjdjcV5qAJxJhCiyUaCzxnjc");
+  
   return res.json();
 }
 
@@ -12,9 +13,11 @@ const TsenwenRiver = {
 
 export default async function Home() {
   const data = await getTsenwenRiverStatus();
-  // checking status of TsenwenRiver
-  TsenwenRiver.status = true; // to be replaced with actual status
-
+  // update TsenwenRiver status
+  // console.log({data});
+  TsenwenRiver.status = (data.status == 1)?true:false;
+  // console.log(TsenwenRiver.status);
+  
   return (
     <main className="center">
       <div className="logo">
