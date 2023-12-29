@@ -39,7 +39,7 @@ export default async function Home({
         />
       </div>
       <h1>Tsen-wen River StoryTeller</h1>
-      {true ? <NickNameModule contract={searchParams?.riverContract}/> : <p>the river is offline</p>}
+      {TsenwenRiver.status ? <NickNameModule contract={searchParams?.riverContract}/> : <p>the river is offline</p>}
     </main>
   );
 }
