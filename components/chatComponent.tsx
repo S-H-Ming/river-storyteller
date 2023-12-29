@@ -5,12 +5,13 @@ import Image from "next/image";
 import { randomBytes } from "crypto";
 
 type Props = {
-  nickname: String;
+  nickname: String,
+  contract: String
 };
 
 
-export default function ChatComponent({ nickname }: Props) {
-  const { input, handleInputChange, handleSubmit, messages } = useChat();
+export default function ChatComponent({ nickname, contract }: Props) {
+  const { input, handleInputChange, handleSubmit, messages } = useChat({body: {contract: contract}});
   const divRef = useRef<HTMLDivElement>(null);
 
   let csrfToken = randomBytes(20).toString('hex')
@@ -72,7 +73,7 @@ export default function ChatComponent({ nickname }: Props) {
       })}
 
       <form onSubmit={handleSubmit}>
-        <input type="hidden" name="csrfToken" value={localStorage.getItem(csrfToken)?.toString()}/>
+        <input type="hidden" name="csrfToken" value={localStorage?.getItem(csrfToken)?.toString()}/>
         <div ref={divRef}>
           <h3>{nickname}:</h3>
           <textarea

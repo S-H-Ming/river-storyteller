@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export default function useNickNameModule() {
+export default function useNickNameModule({contract}: {contract: string | string[] | undefined}) {
   const [nickName, setNickName] = useState("");
 
   return (
@@ -27,7 +27,7 @@ export default function useNickNameModule() {
         </p>
       </label>
 
-      <Link href={{ pathname: "/chat", query: { name: nickName } }}>
+      <Link href={{ pathname: "/chat", query: { name: nickName, riverContract: contract} }}>
         <button disabled={!nickName} className="btn-primary rounded-full p-4">
           Let&apos;s Go
         </button>
